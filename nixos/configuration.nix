@@ -19,6 +19,7 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
+    timeout = 60;
   };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
