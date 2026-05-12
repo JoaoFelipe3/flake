@@ -79,7 +79,7 @@
   boot.tmp.useTmpfs = true;
 
   stylix.targets = {
-    gnome.enable = true; # gdm, not gnome
+    console.enable = true; # pretty console!
   };
 
   # Configure keymap in X11
