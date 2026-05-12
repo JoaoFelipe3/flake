@@ -1,6 +1,6 @@
 # Shared Stylix settings
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {  
   stylix = {
