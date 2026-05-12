@@ -42,6 +42,7 @@
     {
       nixosConfigurations."iusenixbtw" = nixpkgs.lib.nixosSystem {
         modules = [
+          stylix.nixosModules.stylix
           ./nixos/configuration.nix
         ];
       };
