@@ -83,6 +83,7 @@
     inputs.uiua.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.nerd-fonts.fantasque-sans-mono
     pkgs.pwvucontrol
+    pkgs.btop
 
     # make code prettier
     pkgs.nixfmt
