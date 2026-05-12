@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../stylix/stylix.nix
     ];
 
   # # Use the systemd-boot EFI boot loader.
@@ -76,6 +77,10 @@
 
   # why is this not the default???
   boot.tmp.useTmpfs = true;
+
+  stylix.targets = {
+    gnome.enable = true; # gdm, not gnome
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
