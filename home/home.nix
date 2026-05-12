@@ -22,6 +22,7 @@
 
   imports = [
     inputs.zen-browser.homeModules.beta
+    ../stylix/stylix.nix
     ./hypr.nix
     ./starship.nix
   ];
@@ -323,39 +324,21 @@
       };
   };
 
-  stylix = {
-    enable = true;
-    autoEnable = false;
-    base16Scheme = ./colors.yaml;
+  stylix.targets = {
+    gtk.enable = true;
 
-    fonts = {
-      monospace = {
-        package = pkgs.nerd-fonts.fantasque-sans-mono;
-        name = "FantasqueSansM Nerd Font Mono";
-      };
-      serif = config.stylix.fonts.sansSerif;
-      sansSerif = {
-        package = pkgs.nerd-fonts.fantasque-sans-mono;
-        name = "FantasqueSansM Nerd Font";
-      };
+    wezterm.enable = true;
+    nushell.enable = true;
+    waybar = {
+      enable = true;
+      addCss = false;
     };
-
-    targets = {
-      gtk.enable = true;
-
-      wezterm.enable = true;
-      nushell.enable = true;
-      waybar = {
-        enable = true;
-        addCss = false;
-      };
-      swaync.enable = true;
-      zen-browser = {
-        enable = true;
-        profileNames = [ "default" ];
-      };
-      rofi.enable = true;
+    swaync.enable = true;
+    zen-browser = {
+      enable = true;
+      profileNames = [ "default" ];
     };
+    rofi.enable = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
