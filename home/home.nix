@@ -25,6 +25,7 @@
     ../stylix/stylix.nix
     ./hypr.nix
     ./starship.nix
+    ./openrgb.nix
   ];
 
   # ALLOW UNFREE

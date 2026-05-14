@@ -2,14 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../stylix/stylix.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../stylix/stylix.nix
+  ];
 
   # # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
@@ -71,7 +76,10 @@
 
   # allow flakes:
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
 
@@ -83,8 +91,13 @@
   };
 
   boot.kernelParams = [
-    "video=HDMI-A-1:d"
+    "video=HDMI-A-1:d" # disable smaller monitor so console fits whole screen
   ];
+
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -108,7 +121,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.joao = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+    ];
     shell = pkgs.nushell;
   };
 
@@ -117,7 +135,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.    
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     nushell
   ];
@@ -165,4 +183,3 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.11"; # Did you read the comment?
 }
-
