@@ -71,9 +71,6 @@
 
   services.flatpak.enable = true;
 
-  # fix dualboot
-  time.hardwareClockInLocalTime = true;
-
   # allow flakes:
   nix.settings = {
     experimental-features = [
