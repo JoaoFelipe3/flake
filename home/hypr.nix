@@ -222,15 +222,18 @@
     };
   };
 
-  home.file.".config/hypr/hyprtoolkit.conf".text = with config.lib.stylix.colors; with config.stylix.fonts; ''
-    background_color = 0xff${base00}
-    base = 0xff${base01}
-    text = 0xff${base05}
-    alternate_base = 0xff${base02}
-    bright_text = 0xff${base06}
-    accent = 0xff${base0C}
-    accent_secondary = 0xff${base0F}
-    font_family = ${sansSerif.name}
-    font_family_monospace = ${monospace.name}
-  '';
+  home.file.".config/hypr/hyprtoolkit.conf".text =
+    with config.lib.stylix.colors;
+    with config.stylix.fonts;
+    ''
+      background_color = 0xff${base00}
+      base = 0xff${base01}
+      text = 0xff${base05}
+      alternate_base = 0xff${base02}
+      bright_text = 0xff${base06}
+      accent = 0xff${base0C}
+      accent_secondary = 0xff${base0F}
+      font_family = ${sansSerif.name}
+      font_family_monospace = ${monospace.name}
+    '';
 }
