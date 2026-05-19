@@ -231,8 +231,8 @@
       text = 0xff${base05}
       alternate_base = 0xff${base02}
       bright_text = 0xff${base06}
-      accent = 0xff${base0C}
-      accent_secondary = 0xff${base0F}
+      accent = 0xff${base0F}
+      accent_secondary = 0xff${base0C}
       font_family = ${sansSerif.name}
       font_family_monospace = ${monospace.name}
     '';
