@@ -96,6 +96,11 @@
     package = pkgs.openrgb-with-all-plugins;
   };
 
+  # Environment variables!
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
