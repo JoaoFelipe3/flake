@@ -6,11 +6,11 @@
     enableNushellIntegration = true;
   };
 
-  home.file.".config/starship.toml".text = ''
+  home.file.".config/starship.toml".text = with config.lib.stylix.colors; ''
     "$schema" = 'https://starship.rs/config-schema.json'
 
     format = """
-    [](base21)\
+    [](base15)\
     $os\
     $username\
     [](prev_bg bg:base03)\
@@ -40,30 +40,30 @@
     palette = 'base16'
 
     [palettes.base16]
-    base00 = "#${config.lib.stylix.colors.base00}"
-    base01 = "#${config.lib.stylix.colors.base01}"
-    base02 = "#${config.lib.stylix.colors.base02}"
-    base03 = "#${config.lib.stylix.colors.base03}"
-    base04 = "#${config.lib.stylix.colors.base04}"
-    base05 = "#${config.lib.stylix.colors.base05}"
-    base06 = "#${config.lib.stylix.colors.base06}"
-    base07 = "#${config.lib.stylix.colors.base07}"
-    base08 = "#${config.lib.stylix.colors.base08}"
-    base09 = "#${config.lib.stylix.colors.base09}"
-    base10 = "#${config.lib.stylix.colors.base0A}"
-    base11 = "#${config.lib.stylix.colors.base0B}"
-    base12 = "#${config.lib.stylix.colors.base0C}"
-    base13 = "#${config.lib.stylix.colors.base0D}"
-    base14 = "#${config.lib.stylix.colors.base0E}"
-    base15 = "#${config.lib.stylix.colors.base0F}"
-    base16 = "#${config.lib.stylix.colors.base10}"
-    base17 = "#${config.lib.stylix.colors.base11}"
-    base18 = "#${config.lib.stylix.colors.base12}"
-    base19 = "#${config.lib.stylix.colors.base13}"
-    base20 = "#${config.lib.stylix.colors.base14}"
-    base21 = "#${config.lib.stylix.colors.base15}"
-    base22 = "#${config.lib.stylix.colors.base16}"
-    base23 = "#${config.lib.stylix.colors.base17}"
+    base00 = "#${base00}"
+    base01 = "#${base01}"
+    base02 = "#${base02}"
+    base03 = "#${base03}"
+    base04 = "#${base04}"
+    base05 = "#${base05}"
+    base06 = "#${base06}"
+    base07 = "#${base07}"
+    base08 = "#${base08}"
+    base09 = "#${base09}"
+    base10 = "#${base0A}"
+    base11 = "#${base0B}"
+    base12 = "#${base0C}"
+    base13 = "#${base0D}"
+    base14 = "#${base0E}"
+    base15 = "#${base0F}"
+    base16 = "#${base10}"
+    base17 = "#${base11}"
+    base18 = "#${base12}"
+    base19 = "#${base13}"
+    base20 = "#${base14}"
+    base21 = "#${base15}"
+    base22 = "#${base16}"
+    base23 = "#${base17}"
 
     [os]
     disabled = false

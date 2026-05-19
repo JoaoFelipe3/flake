@@ -216,7 +216,7 @@
       }
 
       #workspaces button.active {
-          background-color: @base0C;
+          background-color: @base0F;
           color: @base00;
       }
 
@@ -228,7 +228,7 @@
       }
 
       #workspaces button.active:hover {
-          background-color: @base0C;
+          background-color: @base0F;
           color: @base00;
       }
 
@@ -462,11 +462,11 @@
           --message-hover: rgba(from ${base02} r g b / 0.1); /* messages when hovered */
 
           /* accent colors */
-          --accent-1: ${base0C}; /* links and other accent text */
-          --accent-2: ${base0C}; /* small accent elements */
-          --accent-3: ${base0C}; /* accent buttons */
-          --accent-4: ${base0C}; /* accent buttons when hovered */
-          --accent-5: ${base0C}; /* accent buttons when clicked */
+          --accent-1: ${base0F}; /* links and other accent text */
+          --accent-2: ${base0F}; /* small accent elements */
+          --accent-3: ${base0F}; /* accent buttons */
+          --accent-4: ${base0F}; /* accent buttons when hovered */
+          --accent-5: ${base0F}; /* accent buttons when clicked */
           --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
           --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
           --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
