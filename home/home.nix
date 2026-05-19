@@ -358,37 +358,36 @@
     # '';
     ".config/vesktop/themes/system24.theme.css".text = with config.lib.stylix.colors.withHashtag; ''
       /**
-       * @name system24
-       * @description a tui-style discord theme.
+       * @name midnight
+       * @description a dark, customizable discord theme.
        * @author refact0r
-       * @version 2.0.0
+       * @version 2.1.1
        * @invite nz87hXyvcy
-       * @website https://github.com/refact0r/system24
-       * @source https://github.com/refact0r/system24/blob/master/theme/system24-catppuccin-mocha.theme.css
+       * @website https://github.com/refact0r/midnight-discord
+       * @source https://github.com/refact0r/midnight-discord/blob/master/themes/midnight.theme.css
        * @authorId 508863359777505290
        * @authorLink https://www.refact0r.dev
       */
 
       /* import theme modules */
-      @import url('https://refact0r.github.io/system24/build/system24.css');
+      @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
       body {
-          /* font, change to "" for default discord font */
-          --font: 'FantasqueSansM Nerd Font'; /* change to "" for default discord font */
-          --code-font: 'FantasqueSansM Nerd Font'; /* change to "" for default discord font */
-          font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
-          letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+          /* font options */
+          --font: "${config.stylix.fonts.sansSerif.name}"; /* change to "" for default discord font */
+          --code-font: "${config.stylix.fonts.monospace.name}"; /* change to "" for default discord font */
+          font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
 
           /* sizes */
           --gap: 12px; /* spacing between panels */
           --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
           --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
-          --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
 
           /* animation/transition options */
           --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
           --list-item-transition: 0.2s ease; /* transition for list items */
           --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+          --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
 
           /* top bar options */
           --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
@@ -397,17 +396,17 @@
           --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
 
           /* window controls */
-          --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+          --custom-window-controls: on; /* off: default window controls, on: custom window controls */
           --window-control-size: 14px; /* size of custom window controls */
 
           /* dms button options */
-          --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
-          --dms-icon-svg-url: url(""); /* icon svg url. MUST BE A SVG. */
+          --custom-dms-icon: custom; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+          --dms-icon-svg-url: url('https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
           --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
           --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
           --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
           --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
-          --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/refs/heads/main/assets/logos/exports/macchiato_square.png'); /* url of the background image */
+          --dms-background-image-url: url(""); /* url of the background image */
           --dms-background-image-size: cover; /* size of the background image (css background-size property) */
           --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
 
@@ -418,26 +417,17 @@
           /* transparency/blur options */
           /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
           --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
-          --remove-bg-layer: on; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+          --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
           --panel-blur: off; /* off: no changes, on: blur the background of panels */
           --blur-amount: 12px; /* amount of blur */
           --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
 
+          /* chatbar options */
+          --custom-chatbar: off; /* off: default chatbar, separated: chatbar separated from chat */
+          --chatbar-height: 47px; /* height of the chatbar (56px by default, 47px to align with user panel, 56px recommended for separated) */
+
           /* other options */
           --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
-
-          /* unrounding options */
-          --unrounding: off; /* off: default, on: remove rounded corners from panels */
-
-          /* styling options */
-          --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
-          --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
-          --ascii-loader: system24; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
-
-          /* panel labels */
-          --panel-labels: on; /* off: default, on: add labels to panels */
-          --label-color: var(--text-muted); /* color of labels */
-          --label-font-weight: 500; /* font weight of labels */
       }
 
       /* color options */
