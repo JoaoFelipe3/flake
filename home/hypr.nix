@@ -11,7 +11,7 @@
 
       "$terminal" = "wezterm";
       "$fileManager" = "thunar";
-      "$menu" = "rofi -show drun";
+      "$menu" = "hyprlauncher";
       "$mainMod" = "SUPER";
 
       exec-once = [

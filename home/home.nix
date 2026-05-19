@@ -54,7 +54,7 @@
     # Packages I need:
     pkgs.waybar
     pkgs.wezterm
-    pkgs.rofi
+    # pkgs.rofi
     pkgs.starship
     pkgs.swaynotificationcenter # WHY SO LONG
     pkgs.vesktop
@@ -64,6 +64,7 @@
     pkgs.hyprpolkitagent
     pkgs.hyprcursor
     pkgs.hyprshutdown
+    pkgs.hyprlauncher
 
     # gaming :3
     pkgs.srb2
