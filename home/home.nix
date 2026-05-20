@@ -379,8 +379,8 @@
           font-weight: 400; /* normal text font weight. DOES NOT AFFECT BOLD TEXT */
 
           /* sizes */
-          --gap: 12px; /* spacing between panels */
-          --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+          --gap: 8px; /* spacing between panels */
+          --divider-thickness: 2px; /* thickness of unread messages divider and highlighted message borders */
           --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
 
           /* animation/transition options */
