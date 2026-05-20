@@ -51,7 +51,7 @@
 
         modules = [
           stylix.homeModules.stylix
-          ./home.nix
+          ./home/home.nix
         ];
 
         extraSpecialArgs = { inherit inputs; };
