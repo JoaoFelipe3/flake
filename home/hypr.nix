@@ -69,7 +69,7 @@ in
       plugin = {
         hyprbars = {
           bar_height = 25;
-          bar_color = "rgb(${base01})";
+          bar_color = "rgba(${base01}dd)";
           "col.text" = "rgb(${base05})";
           bar_text_size = 12;
           bar_text_font = "${config.stylix.fonts.sansSerif.name}";
