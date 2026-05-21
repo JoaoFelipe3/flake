@@ -115,8 +115,8 @@ in
       };
 
       dwindle = {
-        pseudotile = true;
         preserve_split = true;
+        smart_split = true;
       };
 
       master = {
@@ -162,7 +162,6 @@ in
         "$mainMod SHIFT, space, togglefloating"
         "$mainMod, D, exec, $menu"
         "$mainMod, P, pseudo"
-        "$mainMod, J, togglesplit"
         "$mainMod, left,  movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up,    movefocus, u"
