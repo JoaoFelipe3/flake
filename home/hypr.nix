@@ -1,8 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
+let
+  hyprbars = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars;
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
+
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
+    plugins = [
+      hyprbars
+    ];
+
     settings = with config.lib.stylix.colors; {
       monitor = [
         "HDMI-A-1, 1440x900@60, 1920x0, 1"
@@ -22,6 +32,7 @@
         "systemctl --user start hyprpolkitagent"
         "hyprpaper"
         "[workspace special:music silent] sh -c 'while true; do wezterm start -- rmpc; done'"
+        "hyprctl plugin load '${hyprbars}/lib/libhyprbars.so'"
       ];
 
       general = {
@@ -52,6 +63,21 @@
           size = 3;
           passes = 1;
           vibrancy = 0.1696;
+        };
+      };
+
+      plugin = {
+        hyprbars = {
+          bar_height = 25;
+          bar_color = "rgb(${base01})";
+          "col.text" = "rgb(${base05})";
+          bar_text_size = 12;
+          bar_text_font = "${config.stylix.fonts.sansSerif.name}";
+          bar_buttons_alignment = "right";
+
+          hyprbars-button = [
+            "rgb(${base08}), 16, , hyprctl dispatch killactive"
+          ]; 
         };
       };
 
