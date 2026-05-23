@@ -87,7 +87,7 @@
     pkgs.nerd-fonts.fantasque-sans-mono
     pkgs.pwvucontrol
     pkgs.btop
-    pkgs.clang
+    pkgs.libclang
 
     # make code prettier
     pkgs.nixfmt
