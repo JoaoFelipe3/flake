@@ -54,6 +54,7 @@
     # Packages I need:
     pkgs.waybar
     pkgs.wezterm
+    pkgs.ghostty
     # pkgs.rofi
     pkgs.starship
     pkgs.swaynotificationcenter # WHY SO LONG
@@ -109,11 +110,19 @@
       config.enable_tab_bar = false
       config.enable_wayland = false -- sneaky workaround to get wezterm to work on hyprland
       config.font = wezterm.font_with_fallback {'FantasqueSansM Nerd Font Mono', 'Uiua386'}
-      config.font_size = 10
+      config.font_size = 9
       config.window_background_opacity = 0.75
 
       return config
     '';
+  };
+
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      font-size = 9;
+      background-opacity = 0.75;
+    };
   };
 
   programs.nushell = {
@@ -331,11 +340,13 @@
     gtk.enable = true;
 
     wezterm.enable = true;
+    ghostty.enable = true;
     nushell.enable = true;
     waybar = {
       enable = true;
       addCss = false;
     };
+
     swaync.enable = true;
     zen-browser = {
       enable = true;

@@ -19,7 +19,7 @@ in
         "DP-1, 1920x1080@180, 0x0, 1"
       ];
 
-      "$terminal" = "wezterm";
+      "$terminal" = "ghostty";
       "$fileManager" = "thunar";
       "$menu" = "hyprlauncher";
       "$mainMod" = "SUPER";
@@ -28,7 +28,7 @@ in
         "waybar"
         "systemctl --user import-environment WAYLAND_DISPLAY"
         "ibus start --type wayland"
-        "wezterm start -- nu -e 'fastfetch; systemd-analyze'"
+        "ghostty --command='nu -e fastfetch'"
         "systemctl --user start hyprpolkitagent"
         "hyprpaper"
         "[workspace special:music silent] sh -c 'while true; do wezterm start -- rmpc; done'"
