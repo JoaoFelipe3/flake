@@ -6,7 +6,9 @@
   stylix = {
     enable = true;
     autoEnable = false;
+
     base16Scheme = ./colors.yaml;
+    polarity = "dark";
 
     fonts = {
       monospace = {
@@ -18,6 +20,13 @@
         package = pkgs.nerd-fonts.fantasque-sans-mono;
         name = "FantasqueSansM Nerd Font";
       };
+    };
+  };
+
+  specialisation.light.configuration = {
+    stylix = {
+      base16Scheme = pkgs.lib.mkForce ./colors-light.yaml;
+      polarity = pkgs.lib.mkForce "light";
     };
   };
 }
