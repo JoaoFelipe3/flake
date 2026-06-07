@@ -153,6 +153,7 @@
     shellAliases = {
       vim = "nvim";
       la = "ls -a";
+      bell = ''print "\a"'';
     };
   };
 
