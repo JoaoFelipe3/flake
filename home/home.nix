@@ -123,6 +123,7 @@
     settings = {
       font-size = 9;
       background-opacity = 0.75;
+      bell-features = "audio";
     };
   };
 
