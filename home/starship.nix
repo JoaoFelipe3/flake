@@ -30,6 +30,7 @@
     $python\
     $conda\
     [](prev_bg bg:base01)\
+    $nix_shell\
     $time\
     [ ](prev_bg)\
     $cmd_duration\
@@ -208,6 +209,12 @@
     vimcmd_replace_one_symbol = '[❮](bold fg:base13)'
     vimcmd_replace_symbol = '[❮](bold fg:base13)'
     vimcmd_visual_symbol = '[❮](bold fg:base10)'
+
+    [nix_shell]
+    disabled = false
+    format = " [$symbol$state (\\($name\\)) ]($style)"
+    style = "fg:base15 bg:prev_bg"
+    symbol = " "
 
     [cmd_duration]
     format = " took $duration "
