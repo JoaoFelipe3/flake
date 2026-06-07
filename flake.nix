@@ -31,6 +31,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
@@ -42,6 +48,7 @@
       zen-browser,
       hyprland,
       hyprland-plugins,
+      plasma-manager,
       ...
     }@inputs:
     let
@@ -61,6 +68,7 @@
 
         modules = [
           stylix.homeModules.stylix
+          plasma-manager.homeModules.plasma-manager
           ./home/home.nix
         ];
 
