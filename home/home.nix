@@ -23,7 +23,8 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     ../stylix/stylix.nix
-    ./hypr.nix
+    ./hypr.nix # remove later
+    ./kde.nix
     ./starship.nix
     ./openrgb.nix
   ];

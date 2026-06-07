@@ -58,7 +58,8 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  programs.hyprland.enable = true;
+  programs.hyprland.enable = true; # remove later
+  services.desktopManager.plasma6.enable = true;
   services.displayManager.gdm.enable = true;
 
   # FUCK NVIDIA!!!
