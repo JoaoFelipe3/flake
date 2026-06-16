@@ -90,6 +90,7 @@
     pkgs.pwvucontrol
     pkgs.btop
     pkgs.clang
+    pkgs.obs-studio
 
     # make code prettier
     pkgs.nixfmt
