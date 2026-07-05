@@ -102,6 +102,7 @@
     pkgs.fortune
     pkgs.lolcat
     pkgs.cmatrix
+    inputs.freesm.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.wezterm = {
