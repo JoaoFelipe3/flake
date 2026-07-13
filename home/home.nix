@@ -343,6 +343,7 @@
 
   stylix.targets = {
     gtk.enable = true;
+    qt.enable = true;
 
     wezterm.enable = true;
     ghostty.enable = true;
