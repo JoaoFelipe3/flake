@@ -81,8 +81,8 @@
     ];
     auto-optimise-store = true;
     # set caches:
-    substituters = [ "https://cache.nixos.org" "https://cache.garnix.io" "https://freesmlauncher.cachix.org" "https://cosmic.cachix.org" ];
-    trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" "freesmlauncher.cachix.org-1:Jcp5Q9wiLL+EDv8Mh7c6L9xGk+lXr7/otpKxMOuBuDs=" "cosmic.cachix.org-1:D7CtxTXtNLhxY7+gghnRyGLJQ69fcaH9S6WcaEWBvBw=" ];
+    substituters = [ "https://cache.nixos.org" "https://freesmlauncher.cachix.org" "https://cosmic.cachix.org" ];
+    trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "freesmlauncher.cachix.org-1:Jcp5Q9wiLL+EDv8Mh7c6L9xGk+lXr7/otpKxMOuBuDs=" "cosmic.cachix.org-1:D7CtxTXtNLhxY7+gghnRyGLJQ69fcaH9S6WcaEWBvBw=" ];
   };
 
   # why is this not the default???
