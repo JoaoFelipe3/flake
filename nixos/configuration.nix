@@ -60,6 +60,7 @@
 
   programs.hyprland.enable = true; # remove later
   services.desktopManager.plasma6.enable = true;
+  services.desktopManager.cosmic.enable = true; # testing!
   services.displayManager.gdm.enable = true;
 
   # FUCK NVIDIA!!!
