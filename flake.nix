@@ -42,6 +42,11 @@
       url = "github:FreesmTeam/FreesmLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -54,6 +59,7 @@
       hyprland,
       hyprland-plugins,
       plasma-manager,
+      cosmic,
       ...
     }@inputs:
     let
@@ -63,6 +69,7 @@
     {
       nixosConfigurations."iusenixbtw" = nixpkgs.lib.nixosSystem {
         modules = [
+          cosmic.nixosModules.default
           stylix.nixosModules.stylix
           ./nixos/configuration.nix
         ];
