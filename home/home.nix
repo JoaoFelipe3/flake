@@ -30,7 +30,10 @@
   ];
 
   # ALLOW UNFREE
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    android_sdk.accept_license = true;
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -94,6 +97,10 @@
 
     # make code prettier
     pkgs.nixfmt
+
+    # android-related stuff
+    pkgs.android-studio
+    pkgs.android-tools
 
     # funsies:
     pkgs.sl
@@ -586,6 +593,8 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    ANDROID_HOME = "$HOME/Android/Sdk";
+    ANDROID_USER_HOME = "$HOME/.android";
   };
 
   # Let Home Manager install and manage itself.
