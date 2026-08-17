@@ -109,6 +109,7 @@
     pkgs.fortune
     pkgs.lolcat
     pkgs.cmatrix
+    pkgs.dosbox-x
     inputs.freesm.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -130,7 +131,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      font-size = 9;
+      font-size = 12;
       background-opacity = 0.75;
       bell-features = "system";
     };
