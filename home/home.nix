@@ -110,6 +110,7 @@
     pkgs.lolcat
     pkgs.cmatrix
     pkgs.dosbox-x
+    pkgs.virt-manager
     inputs.freesm.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

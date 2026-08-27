@@ -101,6 +101,8 @@
     package = pkgs.openrgb-with-all-plugins;
   };
 
+  virtualisation.libvirtd.enable = true;
+
   # Environment variables!
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -133,6 +135,7 @@
       "networkmanager"
       "video"
       "audio"
+      "libvirtd"
     ];
     shell = pkgs.nushell;
   };
