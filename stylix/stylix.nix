@@ -37,15 +37,15 @@ with inputs.color-palette; {
 
     fonts = {
       monospace = {
-        #package = pkgs.nerd-fonts.fantasque-sans-mono;
-        #name = "FantasqueSansM Nerd Font Mono";
-        name = "MxPlusIBMVGA9x16 Nerd Font Mono";
+        package = pkgs.nerd-fonts.fantasque-sans-mono;
+        name = "FantasqueSansM Nerd Font Mono";
+        #name = "MxPlusIBMVGA9x16 Nerd Font Mono";
       };
       serif = config.stylix.fonts.sansSerif;
       sansSerif = {
-        #package = pkgs.nerd-fonts.fantasque-sans-mono;
-        #name = "FantasqueSansM Nerd Font";
-        name = "MxPlusIBMVGA9x16 Nerd Font";
+        package = pkgs.nerd-fonts.fantasque-sans-mono;
+        name = "FantasqueSansM Nerd Font";
+        #name = "MxPlusIBMVGA9x16 Nerd Font";
       };
     };
   };
