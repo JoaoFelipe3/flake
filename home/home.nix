@@ -24,7 +24,7 @@
     inputs.zen-browser.homeModules.beta
     ../stylix/stylix.nix
     ./hypr.nix # remove later
-    ./kde.nix
+    ./kde.nix # this is getting out of hand
     ./starship.nix
     ./openrgb.nix
   ];
@@ -135,6 +135,17 @@
       font-size = 12;
       background-opacity = 0.75;
       bell-features = "system";
+
+      palette = [
+        "8=${config.lib.stylix.colors.base03}"
+        "9=${config.lib.stylix.colors.base12}"
+        "10=${config.lib.stylix.colors.base14}"
+        "11=${config.lib.stylix.colors.base13}"
+        "12=${config.lib.stylix.colors.base16}"
+        "13=${config.lib.stylix.colors.base17}"
+        "14=${config.lib.stylix.colors.base15}"
+        "15=${config.lib.stylix.colors.base07}"
+      ];
     };
   };
 
@@ -382,7 +393,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/vesktop/themes/system24.theme.css".text = with config.lib.stylix.colors.withHashtag; ''
+    ".config/vesktop/themes/system24.theme.css".text = with inputs.color-palette; ''
       /**
        * @name midnight
        * @description a dark, customizable discord theme.
@@ -462,28 +473,28 @@
 
           /* text colors */
           --text-0: var(--bg-4); /* text on colored elements */
-          --text-1: ${base05}; /* other normally white text */
-          --text-2: ${base05}; /* headings and important text */
-          --text-3: ${base05}; /* normal text */
-          --text-4: ${base04}; /* icon buttons and channels */
-          --text-5: ${base03}; /* muted channels/chats and timestamps */
+          --text-1: ${builtins.elemAt gray 8}; /* other normally white text */
+          --text-2: ${builtins.elemAt gray 8}; /* headings and important text */
+          --text-3: ${builtins.elemAt gray 8}; /* normal text */
+          --text-4: ${builtins.elemAt gray 6}; /* icon buttons and channels */
+          --text-5: ${builtins.elemAt gray 5}; /* muted channels/chats and timestamps */
 
           /* background and dark colors */
-          --bg-1: ${base03}; /* dark buttons when clicked */
-          --bg-2: ${base02}; /* dark buttons */
-          --bg-3: ${base01}; /* spacing, secondary elements */
-          --bg-4: ${base00}; /* main background color */
-          --hover: rgba(from ${base04} r g b / 0.3); /* channels and buttons when hovered */
-          --active: rgba(from ${base04} r g b / 0.3); /* channels and buttons when clicked or selected */
-          --active-2: rgba(from ${base04} r g b / 0.3); /* extra state for transparent buttons */
-          --message-hover: rgba(from ${base02} r g b / 0.1); /* messages when hovered */
+          --bg-1: ${builtins.elemAt gray 5}; /* dark buttons when clicked */
+          --bg-2: ${builtins.elemAt gray 4}; /* dark buttons */
+          --bg-3: ${builtins.elemAt gray 3}; /* spacing, secondary elements */
+          --bg-4: ${builtins.elemAt gray 2}; /* main background color */
+          --hover: rgba(from ${builtins.elemAt gray 6} r g b / 0.3); /* channels and buttons when hovered */
+          --active: rgba(from ${builtins.elemAt gray 6} r g b / 0.3); /* channels and buttons when clicked or selected */
+          --active-2: rgba(from ${builtins.elemAt gray 6} r g b / 0.3); /* extra state for transparent buttons */
+          --message-hover: rgba(from ${builtins.elemAt gray 4} r g b / 0.1); /* messages when hovered */
 
           /* accent colors */
-          --accent-1: ${base0F}; /* links and other accent text */
-          --accent-2: ${base0F}; /* small accent elements */
-          --accent-3: ${base0F}; /* accent buttons */
-          --accent-4: ${base0F}; /* accent buttons when hovered */
-          --accent-5: ${base0F}; /* accent buttons when clicked */
+          --accent-1: ${builtins.elemAt accent 1}; /* links and other accent text */
+          --accent-2: ${builtins.elemAt accent 1}; /* small accent elements */
+          --accent-3: ${builtins.elemAt accent 1}; /* accent buttons */
+          --accent-4: ${builtins.elemAt accent 2}; /* accent buttons when hovered */
+          --accent-5: ${builtins.elemAt accent 0}; /* accent buttons when clicked */
           --accent-new: var(--red-2); /* stuff that's normally red like mute/deafen buttons */
           --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
           --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
@@ -504,35 +515,35 @@
           --button-border: hsl(235, 0%, 100%, 0.1); /* neutral border color of buttons */
 
           /* base colors */
-          --red-1: ${base12};
-          --red-2: ${base08};
-          --red-3: ${base08};
-          --red-4: ${base08};
-          --red-5: ${base08};
+          --red-1: ${builtins.elemAt red 2};
+          --red-2: ${builtins.elemAt red 1};
+          --red-3: ${builtins.elemAt red 1};
+          --red-4: ${builtins.elemAt red 1};
+          --red-5: ${builtins.elemAt red 0};
 
-          --green-1: ${base14};
-          --green-2: ${base0B};
-          --green-3: ${base0B};
-          --green-4: ${base0B};
-          --green-5: ${base0B};
+          --green-1: ${builtins.elemAt green 2};
+          --green-2: ${builtins.elemAt green 1};
+          --green-3: ${builtins.elemAt green 1};
+          --green-4: ${builtins.elemAt green 1};
+          --green-5: ${builtins.elemAt green 0};
 
-          --blue-1: ${base16};
-          --blue-2: ${base0D};
-          --blue-3: ${base0D};
-          --blue-4: ${base0D};
-          --blue-5: ${base0D};
+          --blue-1: ${builtins.elemAt blue 2};
+          --blue-2: ${builtins.elemAt blue 1};
+          --blue-3: ${builtins.elemAt blue 1};
+          --blue-4: ${builtins.elemAt blue 1};
+          --blue-5: ${builtins.elemAt blue 0};
 
-          --yellow-1: ${base13};
-          --yellow-2: ${base0A};
-          --yellow-3: ${base0A};
-          --yellow-4: ${base0A};
-          --yellow-5: ${base0A};
+          --yellow-1: ${builtins.elemAt yellow 2};
+          --yellow-2: ${builtins.elemAt yellow 1};
+          --yellow-3: ${builtins.elemAt yellow 1};
+          --yellow-4: ${builtins.elemAt yellow 1};
+          --yellow-5: ${builtins.elemAt yellow 0};
 
-          --purple-1: ${base17};
-          --purple-2: ${base0E};
-          --purple-3: ${base0E};
-          --purple-4: ${base0E};
-          --purple-5: ${base0E};
+          --purple-1: ${builtins.elemAt purple 2};
+          --purple-2: ${builtins.elemAt purple 1};
+          --purple-3: ${builtins.elemAt purple 1};
+          --purple-4: ${builtins.elemAt purple 1};
+          --purple-5: ${builtins.elemAt purple 0};
       }
 
       .search_c322aa > .searchBar_c322aa {

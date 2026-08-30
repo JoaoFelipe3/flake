@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # == DEPENDENCIES ==
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +44,12 @@
       url = "github:FreesmTeam/FreesmLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ## == PERSONAL STUFF ==
+    color-palette = {
+      url = "github:JoaoFelipe3/color-palette";
+      flake = false;
+    };
   };
 
   outputs =
@@ -54,11 +62,16 @@
       hyprland,
       hyprland-plugins,
       plasma-manager,
+      color-palette,
       ...
-    }@inputs:
+    }@inputsPre:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      inputs = inputsPre // {
+        color-palette = builtins.fromJSON (builtins.readFile "${color-palette}/colors.json");
+      };
     in
     {
       nixosConfigurations."iusenixbtw" = nixpkgs.lib.nixosSystem {
@@ -66,6 +79,8 @@
           stylix.nixosModules.stylix
           ./nixos/configuration.nix
         ];
+
+        specialArgs = { inherit inputs; };
       };
 
       homeConfigurations."joao" = home-manager.lib.homeManagerConfiguration {

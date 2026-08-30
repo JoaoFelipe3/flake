@@ -101,6 +101,22 @@
         "type": "github"
       }
     },
+    "color-palette": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787867381,
+        "narHash": "sha256-Np2+xTKXP9dabm3n2acFkCRuBQBQ0epsiAjdw7/JZg8=",
+        "owner": "JoaoFelipe3",
+        "repo": "color-palette",
+        "rev": "8081252bc692c5a3ce483165829a5bd5df859a30",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JoaoFelipe3",
+        "repo": "color-palette",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1781825982,
@@ -751,6 +767,7 @@
     },
     "root": {
       "inputs": {
+        "color-palette": "color-palette",
         "freesm": "freesm",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
